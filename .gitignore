@@ -1,0 +1,51 @@
+# =========================
+# Ambientes Virtuais e Cache
+# =========================
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# =========================
+# Jupyter Notebooks
+# =========================
+.ipynb_checkpoints/
+notebooks_experiments/.ipynb_checkpoints/
+
+# =========================
+# Modelos YOLO e Pesos
+# =========================
+*.pt
+*.onnx
+*.weights
+yolo_training/runs/
+yolo_training/weights/
+
+# =========================
+# Dados de Captura do Drone
+# =========================
+# Ignora arquivos de mídia pesados, mas mantém a pasta e os scripts
+drone_capture/*.mp4
+drone_capture/*.avi
+drone_capture/*.jpg
+drone_capture/*.png
+drone_capture/*.JPG
+
+# =========================
+# Outros (OS e IDEs)
+# =========================
+.vscode/
+.idea/
+.DS_Store
+
+# =========================
+# Ignorar todos os vídeos e modelos pesados
+# =========================
+*.mp4
+*.MP4
+*.avi
+*.engine
+*.pt
+*.onnx

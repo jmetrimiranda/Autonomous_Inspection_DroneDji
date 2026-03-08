@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['Failures']
+
+roboflow:
+  workspace: gmudrone
+  project: drone_gmu-fnphk
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/gmudrone/drone_gmu-fnphk/dataset/2

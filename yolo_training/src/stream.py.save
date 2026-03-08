@@ -1,0 +1,35 @@
+import cv2
+import time
+
+def iniciar_stream():
+    # Localhost pois o MediaMTX esta na mesma maquina
+    rtsp_url = "rtsp://localhost:8554/live/drone"
+    
+    cap = cv2.VideoCapture(rtsp_url)
+    
+    # CRITICO: Zera o buffer para ler sempre o frame atual
+    cap.set(cv2.CAP_PROP_BUFFERSIZE, 1)
+
+    print("Aguardando conexao com o fluxo do drone...")
+
+    while True:
+        ret, frame = cap.read()
+        
+        if not ret:
+            print("Aguardando sinal/imagem...")
+            time.sleep(1) # Evita o travamento do terminal
+            continue
+
+        # --- Pipeline de Inferencia YOLO Aqui ---
+        # results = model(frame)
+        
+        cv2.imshow('Mavic 3E - Stream CV', frame)
+
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+
+    cap.release()
+    cv2.destroyAllWindows()
+
+if __name__ == "__main__":
+    iniciar_stream()
